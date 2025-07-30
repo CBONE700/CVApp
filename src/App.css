@@ -62,27 +62,12 @@ body {
 }
 
 .deleteBtn, .closeBtn {
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
   width: 20%;
   padding: 10px;
   border: none;
   color: white;
   border-radius: 5px;
-}
-
-.deleteBtn {
-  background-color: red;
-}
-
-.deleteBtn:hover {
-  background-color: lightcoral;
-}
-
-.closeBtn {
-  background-color: goldenrod;
-}
-
-.closeBtn:hover {
-  background-color: gold;
 }
 
 .addBtn {
@@ -91,13 +76,9 @@ body {
   margin-left: auto;
   padding: 10px;
   border: none;
-  background-color: blue;
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
   color: white;
   border-radius: 50%;
-}
-
-.addBtn:hover {
-  background-color: lightblue;
 }
 
 .openBtn {
@@ -107,11 +88,7 @@ body {
   border: none;
   color: white;
   border-radius: 5px;
-  background-color: lightgray;
-}
-
-.openBtn:hover {
-  border: 2px solid black;
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
 }
 
 #output {
@@ -188,16 +165,12 @@ body {
 
 .descAddBtn {
   align-self: center;
-  background-color: blue;
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
   color: white;
   height: 20px;
   width: 20px;
   border-radius: 50%;
   border: none;
-}
-
-.descAddBtn:hover {
-  background-color: lightblue;
 }
 
 #dlBtn {
@@ -209,7 +182,7 @@ body {
   cursor: pointer;
 }
 
-#dlBtn:hover {
+button:hover {
   opacity: 0.9;
   transform: scale(1.02);
 }
