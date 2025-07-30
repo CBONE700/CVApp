@@ -10,17 +10,18 @@ function App() {
   const [personalDetails, setPersonalDetails] = useState({fullName: '', email: '', phoneNumber: '', address: ''})
   const [education, setEducation] = useState([])
   const [experience, setExperience] = useState([])
+  const [open, setOpen] = useState([])
   return (
     <>
       <div id="inputs">
-        <div id="personalDetails">
+        <div id="personalDetailsInput">
           <PersonalDetails personalDetails={personalDetails} setPersonalDetails={setPersonalDetails}></PersonalDetails>
         </div>
-        <div id="education">
-          <Education education={education} setEducation={setEducation}></Education>
+        <div id="educationInput">
+          <Education education={education} setEducation={setEducation} open={open} setOpen={setOpen}></Education>
         </div>
-        <div id="experience">
-          <Experience experience={experience} setExperience={setExperience}></Experience>
+        <div id="experienceInput">
+          <Experience experience={experience} setExperience={setExperience} open={open} setOpen={setOpen}></Experience>
         </div>
       </div>
       <div id="output">

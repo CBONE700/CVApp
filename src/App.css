@@ -1,5 +1,115 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 20px;
+}
+
 #root {
   display: flex;
-  justify-content: center;
-  align-items: center;
+  align-items: start;
+  gap: 40px;
+}
+
+#inputs {
+  font-family: Arial, Helvetica, sans-serif;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#personalDetailsInput, #educationInput, #experienceInput {
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  width: 30vw;
+}
+
+#inputs > * > h1 {
+  font-size: 24px;
+}
+
+#educationInput > div, #experienceInput > div {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+#personalDetailsInput input, #educationInput input, #experienceInput input {
+  background-color: #EBEBEB;
+  border: none;
+  border-radius: 5px;
+  padding: 3px;
+  width: 100%;
+  align-self: center;
+}
+
+.delcloseBtns {
+  display: flex;
+  gap: 10px;
+  justify-content: flex-end;
+}
+
+#personalDetailsInput > div, #educationInput > div > div:not(.delcloseBtns), #experienceInput > div > div:not(.delcloseBtns) {
+  display: flex;
+  flex-direction: column;
+}
+
+.deleteBtn, .closeBtn {
+  width: 20%;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+}
+
+.deleteBtn {
+  background-color: red;
+}
+
+.deleteBtn:hover {
+  background-color: lightcoral;
+}
+
+.closeBtn {
+  background-color: goldenrod;
+}
+
+.closeBtn:hover {
+  background-color: gold;
+}
+
+.addBtn {
+  height: 40px;
+  width: 40px;
+  margin-left: auto;
+  padding: 10px;
+  border: none;
+  background-color: blue;
+  color: white;
+  border-radius: 50%;
+}
+
+.addBtn:hover {
+  background-color: lightblue;
+}
+
+.openBtn {
+  width: 100%;
+  align-self: center;
+  padding: 10px;
+  border: none;
+  color: white;
+  border-radius: 5px;
+  background-color: lightgray;
+}
+
+.openBtn:hover {
+  border: 2px solid black;
 }
