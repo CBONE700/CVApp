@@ -113,3 +113,103 @@ body {
 .openBtn:hover {
   border: 2px solid black;
 }
+
+#output {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 14px;
+  width: 794px;
+  min-height: 1123px;
+  background: white;
+  margin: auto;
+  padding: 40px;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#output h1 {
+  font-size: 18px;
+}
+
+#heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  margin-bottom: 20px;
+}
+
+#heading > div {
+  text-align: center;
+}
+
+#contacts {
+  display: flex;
+  gap: 10px;
+}
+
+#fullName {
+  font-size: 28px;
+}
+
+.topline {
+  display: flex;
+}
+
+.topline > div:last-child {
+  margin-left: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.dates {
+  display: flex;
+  gap: 5px;
+}
+
+.descs {
+  display: flex;
+  gap: 20px;
+  margin-bottom: 10px;
+}
+
+#educationOutput > h1, #experienceOutput > h1 {
+  border-bottom: 1px solid black;
+}
+
+.descDelBtn {
+  background-color: white;
+  color: red;
+  border: none;
+}
+
+.descDelBtn:hover {
+  color: lightcoral;
+}
+
+.descAddBtn {
+  align-self: center;
+  background-color: blue;
+  color: white;
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  border: none;
+}
+
+.descAddBtn:hover {
+  background-color: lightblue;
+}
+
+#dlBtn {
+  background-image: linear-gradient(to right, rgb(230, 30, 77) 0%, rgb(227, 28, 95) 50%, rgb(215, 4, 102) 100%);
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#dlBtn:hover {
+  opacity: 0.9;
+  transform: scale(1.02);
+}

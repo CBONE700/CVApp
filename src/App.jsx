@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
+import html2pdf from 'html2pdf.js';
 
 import PersonalDetails from "./components/PersonalDetails.jsx";
 import Education from "./components/Education.jsx";
@@ -7,6 +8,19 @@ import Experience from "./components/Experience.jsx";
 import Resume from "./components/Resume.jsx";
 
 function App() {
+  const resumeRef = useRef();
+  const handleDownload = () => {
+    const element = resumeRef.current;
+    const options = {
+      filename:     'resume.pdf',
+      image:        { type: 'jpeg', quality: 0.98 },
+      html2canvas:  { scale: 2 },
+      jsPDF:        { unit: 'in', format: 'a4', orientation: 'portrait' }
+    };
+    
+    html2pdf().set(options).from(element).save();
+  };
+
   const [personalDetails, setPersonalDetails] = useState({fullName: '', email: '', phoneNumber: '', address: ''})
   const [education, setEducation] = useState([])
   const [experience, setExperience] = useState([])
@@ -24,8 +38,11 @@ function App() {
           <Experience experience={experience} setExperience={setExperience} open={open} setOpen={setOpen}></Experience>
         </div>
       </div>
-      <div id="output">
+      <div id="output" ref={resumeRef}>
         <Resume education={education} experience={experience} personalDetails={personalDetails}></Resume>
+      </div>
+      <div>
+        <button id="dlBtn" onClick={handleDownload}>Download PDF</button>
       </div>
     </>
   )

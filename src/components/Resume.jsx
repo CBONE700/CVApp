@@ -1,14 +1,13 @@
-import PersonalDetails from "./PersonalDetails.jsx";
-
 export default function Resume({ education, experience, personalDetails }) {
   return (
     <>
       <div id="heading">
         <div id="fullName">{personalDetails.fullName}</div>
-        <div id="contactDetails">
+        <div id="address">{personalDetails.address}</div>
+        <div id="contacts">
           <div id="email">{personalDetails.email}</div>
+          <div>{personalDetails.email !== '' && personalDetails.phoneNumber !== '' ? '|' : null}</div>
           <div id="phoneNumber">{personalDetails.phoneNumber}</div>
-          <div id="address">{personalDetails.address}</div>
         </div>
       </div>
       <div id="main">
@@ -18,13 +17,27 @@ export default function Resume({ education, experience, personalDetails }) {
               <h1>Education</h1>
               <div>
                 {education.map(item => (
-                  <div key={item.id}>  
-                    <div className="eduSchool">{item.school}</div>
-                    <div className="eduDegree">{item.degree}</div>
-                    <div className="eduStartDate">{item.startDate}</div>
-                    <div className="eduEndDate">{item.endDate}</div>
-                    <div className="eduLocation">{item.location}</div>
-                    <div className="eduDescription">{item.description}</div>
+                  <div key={item.id}>
+                    <div className="topline">  
+                      <div>
+                        <div className="eduSchool"><strong>{item.school}</strong></div>
+                        <div className="eduDegree"><i>{item.degree}</i></div>
+                      </div>
+                      <div>
+                        <div className="eduLocation"><strong>{item.location}</strong></div>
+                        <div className="dates">
+                          <div className="eduStartDate"><i>{item.startDate}</i></div>
+                          <div><i>{item.startDate !== '' && item.endDate !== '' ? '–' : null}</i></div>
+                          <div className="eduEndDate"><i>{item.endDate}</i></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div className="eduDescription">{item.description.map((desc, i) => {
+                      return (
+                        <div className="descResume" key={i}>
+                          • {desc}
+                        </div>
+                      )})}</div>
                   </div>
                 ))}
               </div>
@@ -38,12 +51,26 @@ export default function Resume({ education, experience, personalDetails }) {
                 <div>
                   {experience.map(item => (
                     <div key={item.id}>
-                      <div className="expCompany">{item.company}</div>
-                      <div className="expPosition">{item.position}</div>
-                      <div className="expStartDate">{item.startDate}</div>
-                      <div className="expEndDate">{item.endDate}</div>
-                      <div className="expLocation">{item.location}</div>
-                      <div className="expDescription">{item.description}</div>
+                      <div className="topline">
+                        <div>
+                          <div className="expCompany"><strong>{item.company}</strong></div>
+                          <div className="expPosition"><i>{item.position}</i></div>
+                        </div>
+                        <div>
+                          <div className="expLocation"><strong>{item.location}</strong></div>
+                          <div className="dates">
+                            <div className="expStartDate"><i>{item.startDate}</i></div>
+                            <div><i>{item.startDate !== '' && item.endDate !== '' ? '–' : null}</i></div>
+                            <div className="expEndDate"><i>{item.endDate}</i></div>
+                          </div>
+                        </div>
+                      </div>
+                        <div className="expDescription">{item.description.map((desc, i) => {
+                          return (
+                            <div className="descResume" key={i}>
+                              • {desc}
+                            </div>
+                          )})}</div>
                     </div>
                   ))}
                 </div>
